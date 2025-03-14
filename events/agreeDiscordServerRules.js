@@ -1,6 +1,7 @@
 const config = require('../config.js');
 
 module.exports = async (client, reaction, user, isAdding) => {
+  if (config.DiscordServerRuleAgreeSystem === false) return;
     try {
       if (reaction.message.id !== config.AGREE_DISCORD_SERVER_RULE_MESSAGE || user.bot || reaction.emoji.name !== "✅") return;
   
